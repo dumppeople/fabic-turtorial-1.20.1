@@ -26,7 +26,6 @@ public class ModItems {
 //  定义一个注册物品的方法
     private static Item registerItem(String name,Item item){
         return Registry.register(Registries.ITEM,new Identifier(TutorialMod.MOD_ID,name),item);
-
     }
 
     public static void registerModItems(){

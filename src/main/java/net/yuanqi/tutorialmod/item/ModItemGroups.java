@@ -9,10 +9,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.yuanqi.tutorialmod.TutorialMod;
+import net.yuanqi.tutorialmod.block.ModBlocks;
 
 public class ModItemGroups {
 //    这里是开了一个itemgroup 其中我们将icon设置为了Ruby的icon 不知道是否是
-//    这个是不是所谓的lambda写法啊
+//    这个是不是所谓的lambda写法啊 是lambda的写法 （形参列表）-》 {代码块}
+//    mc的源码中大量的使用了泛型类的方法
     public static final ItemGroup RUBY_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(TutorialMod.MOD_ID,"ruby"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
@@ -20,7 +22,7 @@ public class ModItemGroups {
                         entries.add(ModItems.RAW_RUBY);
                         entries.add(ModItems.RUBY);
                         entries.add(Items.DIAMOND);
-
+                        entries.add(ModBlocks.RUBY_BLOCK);
                     }).build());
 
     public static void registerItemGroups(){
