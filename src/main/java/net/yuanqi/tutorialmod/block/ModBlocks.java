@@ -13,7 +13,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.yuanqi.tutorialmod.TutorialMod;
-import net.yuanqi.tutorialmod.item.custom.SoundBlock;
+import net.yuanqi.tutorialmod.block.custom.SoundBlock;
 
 public class ModBlocks {
 //    这里就是使这个rubyblock的性质变动和铁块一致了要自己创造的话要使用create

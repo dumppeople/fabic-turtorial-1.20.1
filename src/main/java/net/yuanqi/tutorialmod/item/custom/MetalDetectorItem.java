@@ -3,12 +3,17 @@ package net.yuanqi.tutorialmod.item.custom;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.yuanqi.tutorialmod.util.ModTags;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,7 +61,6 @@ public class MetalDetectorItem extends Item {
                             }
 
                             foundBlock = true;
-                            break;
                         }
                     }
                 }
@@ -88,7 +92,8 @@ public class MetalDetectorItem extends Item {
         }
     }
     private boolean isValuableBlock(BlockState state) {
-        return state.isOf(Blocks.IRON_ORE) ||
+        return state.isIn(ModTags.Blocks.METAL_DETECTOR_DETECTABLE_BLOCKS)||
+                state.isOf(Blocks.IRON_ORE) ||
                 state.isOf(Blocks.DIAMOND_ORE)||
                 state.isOf(Blocks.COAL_ORE)||
                 state.isOf(Blocks.GOLD_ORE)||
@@ -102,5 +107,9 @@ public class MetalDetectorItem extends Item {
                 state.isOf(Blocks.NETHER_GOLD_ORE);
     }
 
-
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("tooltip.tutorialmod.metal_detector.tooltip"));
+        super.appendTooltip(stack, world, tooltip, context);
+    }
 }
