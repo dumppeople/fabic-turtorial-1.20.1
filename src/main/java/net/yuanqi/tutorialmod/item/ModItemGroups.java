@@ -10,6 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.yuanqi.tutorialmod.TutorialMod;
 import net.yuanqi.tutorialmod.block.ModBlocks;
+import net.yuanqi.tutorialmod.item.custom.SoundBlock;
 
 public class ModItemGroups {
 //    这里是开了一个itemgroup 其中我们将icon设置为了Ruby的icon 不知道是否是
@@ -26,7 +27,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAW_RUBY_BLOCK);
 
                         entries.add(ModItems.METAL_DETECTOR);
+                        entries.add(ModBlocks.SOUND_BLOCK);
 
+                        entries.add(ModItems.COAL_BRIQUETTE);
+                        entries.add(ModItems.TOMATO);
                         entries.add(ModBlocks.DEEPSLATE_RAW_ORE);
                         entries.add(ModBlocks.RAW_ORE);
                         entries.add(ModBlocks.END_STONE_RAW_ORE);

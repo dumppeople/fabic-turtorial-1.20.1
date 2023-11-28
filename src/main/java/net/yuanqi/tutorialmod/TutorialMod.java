@@ -2,6 +2,7 @@ package net.yuanqi.tutorialmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.yuanqi.tutorialmod.block.ModBlocks;
 import net.yuanqi.tutorialmod.item.ModItemGroups;
 import net.yuanqi.tutorialmod.item.ModItems;
@@ -17,5 +18,6 @@ public class TutorialMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE,200);
 	}
 }
