@@ -1,6 +1,5 @@
 package net.yuanqi.tutorialmod.item.custom;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
@@ -72,6 +71,7 @@ public class MetalDetectorItem extends Item {
             if(!foundBlock){
                 player.sendMessage(Text.literal("金属探测器没有找到相关矿石！"));
             }
+
         }
 
         context.getStack().damage(100,context.getPlayer(),
@@ -83,6 +83,7 @@ public class MetalDetectorItem extends Item {
             String mineralType = entry.getKey();
             List<int[]> coordinates = entry.getValue();
 //            输出内容
+
             player.sendMessage(Text.literal("矿石种类: " + mineralType), false);
             player.sendMessage(Text.literal("矿石个数: "+coordinates.size()), false);
             player.sendMessage(Text.literal("准确坐标"), false);
@@ -91,20 +92,21 @@ public class MetalDetectorItem extends Item {
             }
         }
     }
+//    isIn这句话有问题
     private boolean isValuableBlock(BlockState state) {
-        return state.isIn(ModTags.Blocks.METAL_DETECTOR_DETECTABLE_BLOCKS)||
-                state.isOf(Blocks.IRON_ORE) ||
-                state.isOf(Blocks.DIAMOND_ORE)||
-                state.isOf(Blocks.COAL_ORE)||
-                state.isOf(Blocks.GOLD_ORE)||
-                state.isOf(Blocks.DEEPSLATE_IRON_ORE)||
-                state.isOf(Blocks.DEEPSLATE_COAL_ORE)||
-                state.isOf(Blocks.DEEPSLATE_GOLD_ORE)||
-                state.isOf(Blocks.DEEPSLATE_DIAMOND_ORE)||
-                state.isOf(Blocks.LAPIS_ORE)||
-                state.isOf(Blocks.DEEPSLATE_LAPIS_ORE)||
-                state.isOf(Blocks.NETHER_QUARTZ_ORE)||
-                state.isOf(Blocks.NETHER_GOLD_ORE);
+        return state.isIn(ModTags.Blocks.METAL_DETECTOR_DETECTABLE_BLOCKS);
+//                state.isOf(Blocks.IRON_ORE) ||
+//                state.isOf(Blocks.DIAMOND_ORE)||
+//                state.isOf(Blocks.COAL_ORE)||
+//                state.isOf(Blocks.GOLD_ORE)||
+//                state.isOf(Blocks.DEEPSLATE_IRON_ORE)||
+//                state.isOf(Blocks.DEEPSLATE_COAL_ORE)||
+//                state.isOf(Blocks.DEEPSLATE_GOLD_ORE)||
+//                state.isOf(Blocks.DEEPSLATE_DIAMOND_ORE)||
+//                state.isOf(Blocks.LAPIS_ORE)||
+//                state.isOf(Blocks.DEEPSLATE_LAPIS_ORE)||
+//                state.isOf(Blocks.NETHER_QUARTZ_ORE)||
+//                state.isOf(Blocks.NETHER_GOLD_ORE);
     }
 
     @Override
